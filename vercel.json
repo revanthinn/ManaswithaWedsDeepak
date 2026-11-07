@@ -1,6 +1,6 @@
 {
-  "installCommand": "npm install --ignore-scripts && node node_modules/esbuild/install.js",
-  "buildCommand": "vite build",
+  "installCommand": "npm ci --ignore-scripts && node node_modules/esbuild/install.js",
+  "buildCommand": "node node_modules/vite/bin/vite.js build",
   "outputDirectory": "dist",
   "framework": null
 }
