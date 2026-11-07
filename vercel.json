@@ -1,6 +1,6 @@
 {
+  "installCommand": "npm install --foreground-scripts",
   "buildCommand": "vite build",
   "outputDirectory": "dist",
-  "installCommand": "npm install",
   "framework": null
 }
