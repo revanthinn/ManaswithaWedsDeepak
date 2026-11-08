@@ -125,15 +125,15 @@ export const HeroCouple: React.FC<HeroProps> = ({ weddingDetails, onExploreClick
           <span
             className="font-display font-bold leading-none tracking-tight text-transparent bg-clip-text"
             style={{
-              fontSize: 'clamp(1.9rem, 6.5vw, 4.6rem)',
+              fontSize: 'clamp(1.5rem, 5.2vw, 3.8rem)',
               backgroundImage: 'linear-gradient(135deg, #f5d060 0%, #e8b84b 40%, #c8902a 70%, #f5d060 100%)',
             }}
           >
-            DEEPAK
+            DEEPAK REDDY
           </span>
           {/* Telugu name */}
           <span className="font-royal text-gold-300/90 mt-1 tracking-wide" style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.35rem)' }}>
-            చి. దీపక్
+            చి. దీపక్ రెడ్డి
           </span>
         </motion.div>
 
@@ -235,7 +235,7 @@ export const HeroCouple: React.FC<HeroProps> = ({ weddingDetails, onExploreClick
             <div className="relative overflow-hidden rounded-xl sm:rounded-2xl border-2 border-gold-300 aspect-[2/3] bg-maroon-900 shadow-inner group">
               <img
                 src="/images/1000288993.jpg"
-                alt="Chi. La. Sow. Manaswitha &amp; Chi. Deepak"
+                alt="Chi. La. Sow. Manaswitha &amp; Chi. Deepak Reddy"
                 className="w-full h-full object-cover object-center brightness-95 contrast-105 group-hover:scale-105 transition-transform duration-1000 ease-out"
               />
               {/* Vignette */}

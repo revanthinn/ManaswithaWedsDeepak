@@ -35,6 +35,7 @@ export const Navbar: React.FC<NavbarProps> = ({ weddingDetails, onReopenEntrance
     { label: 'Talambralu', href: '#talambralu' },
     { label: 'Muhurtham', href: '#countdown' },
     { label: 'Mandapam', href: '#venue' },
+    { label: 'Reception', href: '#reception' },
     { label: 'Gallery', href: '#gallery' },
     { label: 'Blessings', href: '#blessings' },
   ];
@@ -78,7 +79,7 @@ export const Navbar: React.FC<NavbarProps> = ({ weddingDetails, onReopenEntrance
             </div>
             <div>
               <p className="font-display text-xs xs:text-sm sm:text-base font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold-100 to-gold-300 tracking-wider whitespace-nowrap">
-                Manaswitha &amp; Deepak
+                Manaswitha &amp; Deepak Reddy
               </p>
               <p className="text-[9px] xs:text-[10px] tracking-widest text-gold-400/80 font-heading uppercase truncate max-w-[190px] xs:max-w-none">
                 15 Nov 2026 • Sacred Telugu Wedding

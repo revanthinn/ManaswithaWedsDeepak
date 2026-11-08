@@ -48,7 +48,7 @@ export const WeddingFooter: React.FC<FooterProps> = ({ weddingDetails, onReopenE
             <span className="text-gold-400 font-light">&amp;</span>
             <span className="inline-flex items-baseline">
               <sub className="text-xs sm:text-sm font-serif text-gold-400 mr-1 uppercase align-baseline">Chi.</sub>
-              <span>Deepak</span>
+              <span>Deepak Reddy</span>
             </span>
           </h3>
           <p className="font-heading text-sm text-gold-300 mt-1">
@@ -80,9 +80,9 @@ export const WeddingFooter: React.FC<FooterProps> = ({ weddingDetails, onReopenE
         </div>
 
         {/* Copyright & Traditional Credits */}
-        <div className="pt-6 border-t border-gold-500/20 w-full text-center text-xs text-ivory-300/50">
-          <p>
-            Royal South Indian Telugu Wedding Invitation • Designed with Traditional Art &amp; Modern Craft
+        <div className="pt-6 border-t border-gold-500/20 w-full text-center text-xs text-ivory-300/70">
+          <p className="font-heading tracking-widest uppercase text-xs sm:text-sm text-gold-300 font-medium">
+            Made With Love By Revanth Adepu
           </p>
         </div>
       </div>

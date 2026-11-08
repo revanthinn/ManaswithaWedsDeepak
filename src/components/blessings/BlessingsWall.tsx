@@ -108,7 +108,7 @@ export const BlessingsWall: React.FC<BlessingsProps> = ({ blessings, onAddBlessi
                 </h4>
               </div>
               <p className="font-subheading text-sm sm:text-base text-ivory-100">
-                Thank you, <strong className="text-gold-300">{lastSubmittedName}</strong>. Your sacred prayer and akshantalu have been inscribed upon the wall for Manaswitha &amp; Deepak with eternal love.
+                Thank you, <strong className="text-gold-300">{lastSubmittedName}</strong>. Your sacred prayer and akshantalu have been inscribed upon the wall for Manaswitha &amp; Deepak Reddy with eternal love.
               </p>
             </motion.div>
           )}
@@ -170,7 +170,7 @@ export const BlessingsWall: React.FC<BlessingsProps> = ({ blessings, onAddBlessi
                   <textarea
                     rows={3}
                     required
-                    placeholder="Write a verse, Telugu blessing, or loving wish for Manaswitha & Deepak's Grihastha Ashramam..."
+                    placeholder="Write a verse, Telugu blessing, or loving wish for Manaswitha & Deepak Reddy's Grihastha Ashramam..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     className="w-full px-4 py-2.5 rounded-xl bg-maroon-950 border border-gold-500/50 text-ivory-100 placeholder:text-ivory-300/35 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-gold-400 resize-none"

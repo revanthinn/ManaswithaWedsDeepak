@@ -105,7 +105,7 @@ export const PhotoGallery: React.FC<GalleryProps> = ({ photos }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  const categories = ['All', 'Couple', 'Rituals', 'Celebration'];
+  const categories = ['All', ...Array.from(new Set(photos.map((p) => p.category)))];
 
   const filteredPhotos = selectedCategory === 'All' 
     ? photos 
@@ -154,27 +154,29 @@ export const PhotoGallery: React.FC<GalleryProps> = ({ photos }) => {
         />
 
         {/* Category Tabs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 my-10"
-        >
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-5 py-2 rounded-full font-heading text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all cursor-pointer ${
-                selectedCategory === category
-                  ? 'bg-gradient-to-r from-gold-500 to-amber-500 text-maroon-950 shadow-[0_0_15px_rgba(212,175,55,0.6)] font-bold scale-105'
-                  : 'bg-maroon-900/60 border border-gold-400/30 text-gold-300 hover:text-gold-100 hover:border-gold-400'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </motion.div>
+        {categories.length > 2 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 my-10"
+          >
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-5 py-2 rounded-full font-heading text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all cursor-pointer ${
+                  selectedCategory === category
+                    ? 'bg-gradient-to-r from-gold-500 to-amber-500 text-maroon-950 shadow-[0_0_15px_rgba(212,175,55,0.6)] font-bold scale-105'
+                    : 'bg-maroon-900/60 border border-gold-400/30 text-gold-300 hover:text-gold-100 hover:border-gold-400'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </motion.div>
+        )}
 
         {/* Masonry / Grid Layout with 3D Tilt Cards respecting exact 2:3 and 3:2 ratios */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-max items-start">

@@ -178,7 +178,7 @@ export const TalambraluBlessingInteractive: React.FC<TalambraluProps> = ({ weddi
               <div className="relative z-10 w-full h-full rounded-2xl overflow-hidden border-2 border-gold-400/80 shadow-[0_20px_50px_rgba(0,0,0,0.9)] bg-maroon-950">
               <img
                 src="/images/1000289002.jpg"
-                alt="Chi. La. Sow. Manaswitha &amp; Chi. Deepak"
+                alt="Chi. La. Sow. Manaswitha &amp; Chi. Deepak Reddy"
                 className={`w-full h-full object-cover object-center transition-transform duration-500 ${
                     isAnimating ? 'scale-105 filter brightness-110' : 'scale-100'
                   }`}
@@ -216,7 +216,7 @@ export const TalambraluBlessingInteractive: React.FC<TalambraluProps> = ({ weddi
                 <span className="text-gold-300 font-heading tracking-wider uppercase font-semibold inline-flex items-baseline gap-1">
                   <span>Talambralu</span>
                   <span className="text-[10px] text-gold-400 font-serif">||</span>
-                  <span>Manaswitha &amp; Deepak</span>
+                  <span>Manaswitha &amp; Deepak Reddy</span>
                 </span>
                   <span className="text-amber-200 flex items-center gap-1 font-bold">
                     <Sparkles className="w-3.5 h-3.5 text-gold-400 animate-spin-slow" />

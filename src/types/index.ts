@@ -24,6 +24,21 @@ export interface WeddingDetails {
   compliments?: string;
   rsvpContact?: string;
   rsvpEmail?: string;
+  reception?: ReceptionDetails;
+}
+
+export interface ReceptionDetails {
+  title: string;
+  titleTelugu?: string;
+  date: string;
+  dateTelugu?: string;
+  time: string;
+  timeTelugu?: string;
+  venueName: string;
+  venueNameTelugu?: string;
+  address: string;
+  addressTelugu?: string;
+  googleMapsUrl: string;
 }
 
 export interface GalleryPhoto {

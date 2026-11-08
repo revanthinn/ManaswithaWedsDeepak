@@ -30,7 +30,7 @@ export const TraditionalName: React.FC<TraditionalNameProps> = ({
 
   // Telugu prefix and core name
   const teluguPrefix = isBride ? 'చి. ల. సౌ.' : 'చి.';
-  let teluguMainName = teluguFullName ? teluguFullName.trim() : (isBride ? 'మనస్విత' : 'దీపక్');
+  let teluguMainName = teluguFullName ? teluguFullName.trim() : (isBride ? 'మనస్విత' : 'దీపక్ రెడ్డి');
   const teluguPrefixRegex = /^(చి\.?\s*ల\.?\s*సౌ\.?|చి\.?\s*సౌ\.?|చి\.)\s*/;
   const teluguMatch = teluguMainName.match(teluguPrefixRegex);
   if (teluguMatch) {

@@ -15,6 +15,7 @@ import { FamilyAnnouncement } from './components/announcement/FamilyAnnouncement
 import { TalambraluBlessingInteractive } from './components/blessings/TalambraluBlessingInteractive';
 import { WeddingCountdown } from './components/countdown/WeddingCountdown';
 import { WeddingVenue } from './components/venue/WeddingVenue';
+import { WeddingReception } from './components/reception/WeddingReception';
 import { PhotoGallery } from './components/gallery/PhotoGallery';
 import { BlessingsWall } from './components/blessings/BlessingsWall';
 import { WeddingFooter } from './components/footer/WeddingFooter';
@@ -23,31 +24,14 @@ export function App() {
   const [weddingDetails] = useState<WeddingDetails>(() => {
     // Purge outdated legacy cached versions
     try {
-      const oldKeys = ['royal_wedding_details', 'royal_wedding_details_v1', 'royal_wedding_details_v2'];
-      oldKeys.forEach((key) => {
-        const val = localStorage.getItem(key);
-        if (val && (val.includes('[') || val.includes('Karthik') || val.includes('VENUE NAME') || val.includes('[DATE]'))) {
-          localStorage.removeItem(key);
-        }
-      });
+      const oldKeys = [
+        'royal_wedding_details',
+        'royal_wedding_details_v1',
+        'royal_wedding_details_v2',
+        'royal_wedding_details_manaswitha_deepak_v2'
+      ];
+      oldKeys.forEach((key) => localStorage.removeItem(key));
     } catch {}
-
-    const saved = localStorage.getItem('royal_wedding_details_manaswitha_deepak_v2');
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved);
-        const hasPlaceholder = Object.values(parsed).some(
-          (v) => typeof v === 'string' && (v.includes('[') || v.includes(']'))
-        );
-        if (!hasPlaceholder && parsed.groomName && parsed.groomName.includes('Deepak')) {
-          const merged = { ...MANASWITHA_DEEPAK_DETAILS, ...parsed };
-          if (merged.brideNameTelugu && merged.brideNameTelugu.includes('మానస్విత')) {
-            merged.brideNameTelugu = merged.brideNameTelugu.replace(/మానస్విత/g, 'మనస్విత');
-          }
-          return merged;
-        }
-      } catch {}
-    }
     return MANASWITHA_DEEPAK_DETAILS;
   });
 
@@ -142,6 +126,9 @@ export function App() {
 
         {/* Wedding Venue & Mandapam */}
         <WeddingVenue weddingDetails={weddingDetails} />
+
+        {/* Wedding Reception */}
+        <WeddingReception weddingDetails={weddingDetails} />
 
         {/* Photo Gallery & 3D Tilt Lightbox */}
         <PhotoGallery photos={GALLERY_PHOTOS} />

@@ -329,95 +329,20 @@ export const TraditionalAudioPlayer: React.FC<AudioPlayerProps> = ({ autoPlayReq
   }, [autoPlayRequest, isPlaying, playAudio]);
 
   return (
-    <>
-      {/* Hidden YouTube IFrame container */}
-      <div 
-        style={{ 
-          position: 'fixed', 
-          bottom: -100, 
-          left: -100, 
-          width: 1, 
-          height: 1, 
-          opacity: 0.01, 
-          pointerEvents: 'none', 
-          zIndex: -1 
-        }}
-      >
-        <div id="yt-wedding-audio-player" />
-      </div>
-
-      {/* Floating Audio Pill */}
-      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center gap-2">
-        <div 
-          className={`flex items-center gap-2 sm:gap-3 px-2.5 py-1.5 sm:px-3.5 sm:py-2.5 rounded-full border border-gold-400/40 backdrop-blur-md shadow-2xl transition-all duration-300 ${
-            isPlaying 
-              ? 'bg-maroon-900/95 text-gold-200 ring-2 ring-gold-400/40 shadow-[0_4px_25px_rgba(212,175,55,0.4)]' 
-              : 'bg-maroon-950/85 text-gold-300/70 hover:text-gold-200 hover:border-gold-400/70'
-          }`}
-        >
-          {/* Play/Pause Button */}
-          <button
-            onClick={togglePlayback}
-            aria-label={isPlaying ? 'Pause wedding soundtrack' : 'Play wedding soundtrack'}
-            className="relative flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-tr from-gold-600 via-gold-400 to-amber-300 text-maroon-950 font-bold shadow-md hover:scale-105 active:scale-95 transition-transform cursor-pointer"
-          >
-            {isPlaying ? (
-              <span className="flex gap-0.5 items-end justify-center w-4 h-4">
-                <span className="w-1 bg-maroon-950 rounded-full animate-bounce" style={{ height: '70%', animationDelay: '0.1s' }} />
-                <span className="w-1 bg-maroon-950 rounded-full animate-bounce" style={{ height: '100%', animationDelay: '0.3s' }} />
-                <span className="w-1 bg-maroon-950 rounded-full animate-bounce" style={{ height: '60%', animationDelay: '0.2s' }} />
-              </span>
-            ) : (
-              <Music className="w-4 h-4 ml-0.5" />
-            )}
-          </button>
-
-          {/* Music Label & Status */}
-          <div 
-            className="cursor-pointer select-none text-left" 
-            onClick={() => setIsExpanded(!isExpanded)}
-          >
-            <div className="flex items-center gap-1.5 text-xs font-semibold tracking-wider text-gold-300 uppercase">
-              <span>Telugu Mangala Vadyam</span>
-              {activeSource === 'youtube' ? (
-                <Youtube className="w-3 h-3 text-red-400 flex-shrink-0" />
-              ) : (
-                <Sparkles className="w-3 h-3 text-gold-400 animate-pulse" />
-              )}
-            </div>
-            <p className="text-[10px] text-ivory-300/80 truncate max-w-[140px] sm:max-w-[190px]">
-              {isPlaying 
-                ? 'Nadaswaram & Shehnai (Live)' 
-                : 'Click to Play Audio'}
-            </p>
-          </div>
-
-          {/* Mute Button */}
-          <button
-            onClick={toggleMute}
-            aria-label={isMuted ? 'Unmute' : 'Mute'}
-            className="p-1 rounded-full text-gold-300 hover:text-gold-100 hover:bg-gold-500/10 transition-colors cursor-pointer"
-          >
-            {isMuted ? <VolumeX className="w-4 h-4 text-red-400" /> : <Volume2 className="w-4 h-4" />}
-          </button>
-
-          {/* Expanded Volume Slider */}
-          {isExpanded && (
-            <div className="flex items-center gap-2 pl-2 border-l border-gold-500/30">
-              <input
-                type="range"
-                min="0"
-                max="1"
-                step="0.05"
-                value={isMuted ? 0 : volume}
-                onChange={handleVolumeChange}
-                className="w-16 accent-gold-400 cursor-pointer h-1.5 bg-maroon-800 rounded-lg"
-                title="Volume control"
-              />
-            </div>
-          )}
-        </div>
-      </div>
-    </>
+    <div 
+      style={{ 
+        position: 'fixed', 
+        bottom: -100, 
+        left: -100, 
+        width: 1, 
+        height: 1, 
+        opacity: 0.01, 
+        pointerEvents: 'none', 
+        zIndex: -1 
+      }}
+      aria-hidden="true"
+    >
+      <div id="yt-wedding-audio-player" />
+    </div>
   );
 };
